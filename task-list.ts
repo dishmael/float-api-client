@@ -61,5 +61,14 @@ import { fetchPeople, People } from "./src/api/people";
     });
   });
 
-  printCSV(schedules);
+  printCSV(schedules, [
+    { key: "resource", header: "RESOURCE" },
+    { key: "client", header: "CLIENT" },
+    { key: "project", header: "PROJECT" },
+    { key: "name", header: "NAME" },
+    { key: "rate", header: "RATE" },
+    { key: "start", header: "START" },
+    { key: "end", header: "END" },
+    { key: "status", header: "STATUS" },
+  ]);
 })();

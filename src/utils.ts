@@ -1,21 +1,17 @@
 import { stringify } from "csv-stringify";
 
-// Prepare and output the content in CSV format
-export const printCSV = (schedules: any[]) => {
+export type ColumnHeader = {
+  key: string;
+  header: string; 
+}
+
+// This function is used to output the content in CSV format
+export const printCSV = (rows: any[], columns: ColumnHeader[]) => {
   stringify(
-    schedules,
+    rows,
     {
       header: true,
-      columns: [
-        { key: "resource", header: "RESOURCE" },
-        { key: "client", header: "CLIENT" },
-        { key: "project", header: "PROJECT" },
-        { key: "name", header: "NAME" },
-        { key: "rate", header: "RATE" },
-        { key: "start", header: "START" },
-        { key: "end", header: "END" },
-        { key: "status", header: "STATUS" },
-      ],
+      columns: columns,
     },
     (err, output) => {
       if (err) {
