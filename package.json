@@ -1,0 +1,24 @@
+{
+  "name": "float-api-utility-1.0.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "projects": "npx ts-node project-list.ts",
+    "tasks": "npx ts-node task-list.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.3",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@types/node": "^22.13.13",
+    "axios": "^1.8.4",
+    "csv-stringify": "^6.5.2",
+    "dotenv": "^16.4.7"
+  }
+}
