@@ -5,7 +5,7 @@ dotenv.config(); // load environment
 export const Headers = {
   Authorization: `Bearer ${process.env.API_KEY}`,
   "Content-Type": "application/json",
-  "User-Agent": "Qmulos <david.ishmael@qmulos.com>",
+  "User-Agent": `${process.env.USER_AGENT}`, 
 };
 
 export const Status = ["Draft", "Tentative", "Confirmed", "Complete"];
