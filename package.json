@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "projects": "npx ts-node project-list.ts",
-    "tasks": "npx ts-node task-list.ts"
+    "projects": "npx ts-node --require dotenv/config project-list.ts",
+    "tasks": "npx ts-node --require dotenv/config task-list.ts"
   },
   "keywords": [],
   "author": "",
