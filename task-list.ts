@@ -6,7 +6,6 @@ import { fetchProjects, Project } from "./src/api/projects";
 import { fetchPhases, Phase } from "./src/api/phases";
 import { fetchPeople, People } from "./src/api/people";
 
-
 // Main function
 (async () => {
   const [clients, projects, phases, people, tasks] = await Promise.all([

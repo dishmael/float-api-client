@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-dotenv.config(); // load environment
+dotenv.config(); // load environment variables from .env file
 
 export const Headers = {
   Authorization: `Bearer ${process.env.API_KEY}`,

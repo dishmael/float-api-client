@@ -1,9 +1,6 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
 import { Headers } from "../common";
-
-dotenv.config(); // load environment
 
 export type Client = {
   client_id: number;
