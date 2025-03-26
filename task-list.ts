@@ -6,11 +6,8 @@ import { fetchProjects, Project } from "./src/api/projects";
 import { fetchPhases, Phase } from "./src/api/phases";
 import { fetchPeople, People } from "./src/api/people";
 
-/**
- * Main entry point
- *
- * Invoke as: npm --silent start > float-projects.csv
- */
+
+// Main function
 (async () => {
   const [clients, projects, phases, people, tasks] = await Promise.all([
     fetchClients(),

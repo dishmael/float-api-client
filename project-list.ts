@@ -1,7 +1,7 @@
-import { fetchProjects } from "./src/api/projects.ts";
-import { fetchTasks } from "./src/api/tasks.ts";
+import { fetchProjects } from "./src/api/projects";
+import { fetchTasks } from "./src/api/tasks";
 
-// Entrypoint
+// Main function
 (async () => {
   const [tasks, projects] = await Promise.all([
     fetchTasks(),
