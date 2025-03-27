@@ -19,10 +19,19 @@ import { fetchTasks, Task } from "./src/api/tasks";
 
     if (output.has(pname)) {
       const t = output.get(pname) as Task;
+
+      // Update people_ids
       t.people_ids = [
         ...(t.people_ids ?? []),
         ...(t.people_ids?.includes(task.people_id) ? [] : [task.people_id])
       ];
+
+      // Update start and end dates
+      t.start_date = t.start_date < task.start_date ? t.start_date : task.start_date;
+      t.end_date = t.end_date > task.end_date ? t.end_date : task.end_date;
+     
+      output.set(pname, t);
+
     } else {
       task.people_ids = [task.people_id];
       output.set(pname, task);
