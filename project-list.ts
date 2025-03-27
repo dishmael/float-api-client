@@ -7,6 +7,9 @@ import { fetchTasks, Task } from "./src/api/tasks";
 
   const output = new Map<string, any>();
   tasks.forEach((task: Task) => {
+    // Only consider confirmed tasks
+    if (task.status != 2) { return; }
+
     let pname = task.name;
     if (pname === "") {
       pname =
@@ -14,12 +17,22 @@ import { fetchTasks, Task } from "./src/api/tasks";
         "";
     }
 
-    output.set(pname, task);
+    if (output.has(pname)) {
+      const t = output.get(pname) as Task;
+      t.people_ids = [
+        ...(t.people_ids ?? []),
+        ...(t.people_ids?.includes(task.people_id) ? [] : [task.people_id])
+      ];
+    } else {
+      task.people_ids = [task.people_id];
+      output.set(pname, task);
+    }
+
   });
 
-  console.log(output);
+  //console.log(output);
 
-  // output.forEach((value, key) => {
-  //   console.log(`${key},${value.start_date},${value.end_date}`);
-  // })
+  output.forEach((value, key) => {
+    console.log(`${key},${value.people_ids.length},${value.start_date},${value.end_date}`);
+  })
 })();
