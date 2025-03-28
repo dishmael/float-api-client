@@ -5,6 +5,8 @@ import { fetchTasks, Task } from "./src/api/tasks";
 (async () => {
   const [tasks, projects] = await Promise.all([fetchTasks(), fetchProjects()]);
 
+  // console.log(projects)
+
   const output = new Map<string, any>();
   tasks.forEach((task: Task) => {
     // Only consider confirmed tasks
@@ -39,9 +41,7 @@ import { fetchTasks, Task } from "./src/api/tasks";
 
   });
 
-  //console.log(output);
-
   output.forEach((value, key) => {
-    console.log(`${key},${value.people_ids.length},${value.start_date},${value.end_date}`);
+    console.log(`${key},${value.people_ids.length},${value.billable},${value.start_date},${value.end_date}`);
   })
 })();

@@ -6,6 +6,7 @@ export type Project = {
   project_id: number;
   client_id: number;
   name: string;
+  non_billable: boolean;
 }
 
 /**
@@ -18,7 +19,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
 
   try {
     const response = await axios.get(
-      `${process.env.BASE_URL}/projects?active=1&per-page=1000&fields=project_id,client_id,name`,
+      `${process.env.BASE_URL}/projects?active=1&per-page=1000&fields=project_id,client_id,name,non_billable`,
       {
         headers: Headers,
       }

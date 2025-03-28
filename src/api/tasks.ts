@@ -12,6 +12,7 @@ export type Task = {
   start_date: string;
   end_date: string;
   status: number;
+  billable: number;
 };
 
 /**
@@ -21,7 +22,7 @@ export type Task = {
  */
 export const fetchTasks = async (): Promise<Task[]> => {
   const fields =
-    "task_id,project_id,people_id,people_ids,phase_id,name,start_date,end_date,status";
+    "task_id,project_id,people_id,people_ids,phase_id,name,start_date,end_date,status,billable";
 
   let tasks: Task[] = [];
 
